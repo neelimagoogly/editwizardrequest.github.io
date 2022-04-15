@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="en">
   <head>
@@ -13,7 +12,8 @@
     <link rel="stylesheet"  href="style.css">
     
   </head>
-  <body>
+  <body onload='document.form1.text1.focus()'>
+    <script>alert('Instructions of Edit Request Wizard:' + "\n" + '1)Edit the orginal text in the 1st box'+ "\n" + '2)Cite the sources in the 2nd box' + "\n" + '3)Type the quotes in the 3rd box' + "\n" + '4)Before submitting the form:'+"\n"+"  "+"a)If you entered ISBN as source , click 'Check ISBN' Button"+"  "+"\n"+"b)If you entered URL as source , click 'Check URL' Button"+"\n"+"  "+"c)To check if the quote entered is not obviously invalid , click 'Check Quote' Button")</script>
     <div class="image"><img class="image" src="top.png" alt="image not visible"></div>
     <div class="link"><img src="link.png" alt="image not visible"></div>
     <div class="link1"><img src="image link.png" alt="image not visible"></div>
@@ -22,7 +22,7 @@
       <h1>Edit Request Form</h1>
     </div>
     
-    <form>
+    <form name="form1" action="#">
       <div id="container">
         <div id="edit form">
         
@@ -44,8 +44,9 @@
           </div>
   
           <div class="form-floating">
-            <textarea class="form-control" placeholder="Cite the sources here(sources can be URL or ISBN)" id="validationCustom03"required style="height: 100px"></textarea>
-            
+            <textarea class="form-control" name="text1" placeholder="Cite the sources here(sources can be URL or ISBN)" required style="height: 100px"></textarea>
+            <button type="submit" class="btn btn-primary" onclick="isbncheck(document.form1.text1)">Check ISBN</button>
+            <button type="submit" class="btn btn-primary" onclick="urlcheck(document.form1.text1)">Check URL</button>
             <select class="form-select" aria-label="Default select example">
               <option selected>Templates</option>
               <option value="1">cite web</option>
@@ -55,11 +56,11 @@
             </select>
           </div>
           <div class="form-floating">
-            <textarea class="form-control" placeholder="Quote from the source" id="validationCustom04" required style="height: 100px"></textarea>
+            <textarea class="form-control" placeholder="Quote from the source"  required style="height: 100px"></textarea>
             <div class="invalid-feedback">
               Please provide a valid quote.
             </div>
-        
+            <button type="submit" class="btn btn-primary" onclick="required()">Check Quote</button>
             <div class="form-check">
               <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
               <label class="form-check-label" for="flexCheckDefault">
@@ -81,9 +82,10 @@
         
           <div class="d-grid">
             
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary" onclick="validate()">Submit</button>
           
           </div>
+
         
         
         </div>
@@ -91,6 +93,7 @@
       <div class="link"><img src="templates.jpg" alt="image not visible"></div>
       <div class="link1"><img src="ref.png" alt="image not visible"></div>
     </form>
+    
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
