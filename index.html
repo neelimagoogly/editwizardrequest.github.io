@@ -1,0 +1,110 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    
+
+    <title>EDIT REQUEST WIZARD</title>
+    <link rel="stylesheet"  href="style.css">
+    
+  </head>
+  <body onload='document.form1.text1.focus()'>
+    <script>alert('Instructions of Edit Request Wizard:' + "\n" + '1)Edit the orginal text in the 1st box'+ "\n" + '2)Cite the sources in the 2nd box' + "\n" + '3)Type the quotes in the 3rd box' + "\n" + '4)Before submitting the form:'+"\n"+"  "+"a)If you entered ISBN as source , click 'Check ISBN' Button"+"  "+"\n"+"b)If you entered URL as source , click 'Check URL' Button"+"\n"+"  "+"c)To check if the quote entered is not obviously invalid , click 'Check Quote' Button")</script>
+    <div class="image"><img class="image" src="top.png" alt="image not visible"></div>
+    <div class="link"><img src="link.png" alt="image not visible"></div>
+    <div class="link1"><img src="image link.png" alt="image not visible"></div>
+    
+    <div class="style">
+      <h1>Edit Request Form</h1>
+    </div>
+    
+    <form name="form1" action="#">
+      <div id="container">
+        <div id="edit form">
+        
+          <div class="form-floating">
+            <textarea class="form-control" placeholder="Text to be edited" id="floatingTextarea2" style="height: 100px"></textarea>
+            <select class="form-select" aria-label="Default select example">
+              <option selected>Insert</option>
+              <option value="1">Wiki markup</option>
+              <option value="2">Symbols</option>
+              <option value="3">Latin</option>
+              <option value="3">Greek</option>
+              <option value="3">Cyrillic</option>
+              <option value="3">Hebrew</option>
+              <option value="3">Arabic</option>
+              <option value="3">IPA(English)</option>
+              <option value="3">IPA</option>
+              <option value="3">Math and logic</option>
+            </select>
+          </div>
+  
+          <div class="form-floating">
+            <textarea class="form-control" name="text1" placeholder="Cite the sources here(sources can be URL or ISBN)" required style="height: 100px"></textarea>
+            <button type="submit" class="btn btn-primary" onclick="isbncheck(document.form1.text1)">Check ISBN</button>
+            <button type="submit" class="btn btn-primary" onclick="urlcheck(document.form1.text1)">Check URL</button>
+            <select class="form-select" aria-label="Default select example">
+              <option selected>Templates</option>
+              <option value="1">cite web</option>
+              <option value="2">cite news</option>
+              <option value="3">cite book</option>
+              <option value="3">cite journal</option>
+            </select>
+          </div>
+          <div class="form-floating">
+            <textarea class="form-control" placeholder="Quote from the source"  required style="height: 100px"></textarea>
+            <div class="invalid-feedback">
+              Please provide a valid quote.
+            </div>
+            <button type="submit" class="btn btn-primary" onclick="required()">Check Quote</button>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+              <label class="form-check-label" for="flexCheckDefault">
+                This is a minor edit
+              </label>
+            </div>
+            <select class="form-select" aria-label="Default select example">
+              <option selected>Watch this page</option>
+              <option value="1">Permanent</option>
+              <option value="2">1 Week</option>
+              <option value="3">1 Month</option>
+              <option value="3">3 Month</option>
+              <option value="3">6 Month</option>
+            
+            </select>
+          
+            </div>
+          </div>
+        
+          <div class="d-grid">
+            
+            <button type="submit" class="btn btn-primary" onclick="validate()">Submit</button>
+          
+          </div>
+
+        
+        
+        </div>
+      </div>
+      <div class="link"><img src="templates.jpg" alt="image not visible"></div>
+      <div class="link1"><img src="ref.png" alt="image not visible"></div>
+    </form>
+    
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    -->
+    
+    <script src="script.js"></script>
+  </body>
+</html>
